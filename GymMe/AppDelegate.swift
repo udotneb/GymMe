@@ -19,7 +19,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let tabBarController = UITabBarController()
         
-        let createWorkout = CreateWorkoutViewController()
+        let createWorkout = NewOrSavedWorkoutViewController()
+//        let createWorkout = FinishedLoggingWorkoutController() // for prototyping
+        
         createWorkout.view.backgroundColor = .white
         let newsFeed = NewsFeedViewController()
         newsFeed.view.backgroundColor = .white

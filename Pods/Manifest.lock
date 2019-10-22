@@ -1,3 +1,20 @@
-PODFILE CHECKSUM: 6f2e00d1aeb561a9e5b3915f5c75c04a5f9baf7c
+PODS:
+  - ImagePicker (3.1.0)
+  - SkyFloatingLabelTextField (3.7.0)
+
+DEPENDENCIES:
+  - ImagePicker
+  - SkyFloatingLabelTextField (~> 3.0)
+
+SPEC REPOS:
+  trunk:
+    - ImagePicker
+    - SkyFloatingLabelTextField
+
+SPEC CHECKSUMS:
+  ImagePicker: db1fd7626337b2577c523bef5f499bbbe5a37079
+  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
+
+PODFILE CHECKSUM: 7f7844ea1721b1b19862f38dbd7628912dd0b9e5
 
 COCOAPODS: 1.8.1

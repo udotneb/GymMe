@@ -6,6 +6,8 @@ target 'GymMe' do
   use_frameworks!
 
   # Pods for GymMe
+  pod 'SkyFloatingLabelTextField', '~> 3.0'
+  pod 'ImagePicker'
 
   target 'GymMeTests' do
     inherit! :search_paths

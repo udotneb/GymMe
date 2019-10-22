@@ -6,13 +6,14 @@
 //  Copyright © 2019 Benjamin Ulrich. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Post {
     let postID: UUID
-    let workoutID: UUID
-    let userID: UUID
-    let picturePaths: [String] // TODO: find actual way to do this
-    let caption: String
-    let time: Date
+    let workoutID: UUID?
+    let userID: UUID?
+    let pictures: [UIImage]?
+    let title: String
+    let description: String
+    let time: NSDate
 }
