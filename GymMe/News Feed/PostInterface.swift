@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct Post {
+struct FeedPost {
     let postID: UUID
     let workoutID: UUID
     let userID: UUID

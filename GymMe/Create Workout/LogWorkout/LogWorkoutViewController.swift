@@ -40,5 +40,6 @@ class LogWorkoutViewController: UIViewController {
                 self?.logWorkoutView?.addNewExcerciseToScrollview(nameExcercise: name)
             }
         }
+        self.updateViewConstraints()
     }
 }

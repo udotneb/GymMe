@@ -10,8 +10,7 @@ import UIKit
 import McPicker
 
 class LogWorkoutView: UIView {
-    // TODO 1: Make the excercise views dynamically sized instead of constant
-    // TODO 2: Make it so that the popover doesn't animate once done is pressed
+    // TODO: Make it so that the popover doesn't animate once done is pressed
     
     var parentViewController: LogWorkoutViewController // need this so we can use popover
     
@@ -74,7 +73,7 @@ class LogWorkoutView: UIView {
     func addNewExcerciseToScrollview(nameExcercise: String) {
         let excerciseView = ExcerciseView(excerciseName: nameExcercise)
         excerciseView.translatesAutoresizingMaskIntoConstraints = false
-        excerciseView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        
         stackView.insertArrangedSubview(excerciseView, at: excerciseViewLst.count)
         
         excerciseViewLst.append(excerciseView)
