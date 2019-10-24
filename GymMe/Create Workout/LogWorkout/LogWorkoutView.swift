@@ -44,7 +44,18 @@ class LogWorkoutView: UIView {
     
         scrollView.delaysContentTouches = false
         
-        scrollView.addSubview(stackView)
+        let contentView = UIView()
+        scrollView.addSubview(contentView)
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentView.leftAnchor.constraint(equalTo: scrollView.leftAnchor).isActive = true
+        contentView.rightAnchor.constraint(equalTo: scrollView.rightAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
+        contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        
+        contentView.addSubview(stackView)
+        
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
@@ -53,11 +64,10 @@ class LogWorkoutView: UIView {
         addExcerciseButton.translatesAutoresizingMaskIntoConstraints = false
         addExcerciseButton.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.1).isActive = true
 
-        stackView.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor).isActive = true
-        stackView.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor).isActive = true
-        stackView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
-        stackView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
+        stackView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 10).isActive = true
+        stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
+        stackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
 
     
@@ -90,7 +100,7 @@ class LogWorkoutView: UIView {
             let workout = Workout(excerciseLst: excerciseLst,
                                   userID: UUID.init(), // find way to do this that persists
                                   workoutID: UUID.init(),
-                                  time: NSDate())
+                                  time: Date())
             return workout
         }
         return nil

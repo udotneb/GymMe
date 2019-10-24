@@ -18,12 +18,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         let tabBarController = UITabBarController()
         
-        let createWorkout = NewOrSavedWorkoutViewController()
-//        let createWorkout = LogWorkoutViewController() // for prototyping
-        
-        createWorkout.view.backgroundColor = .white
         let newsFeed = NewsFeedViewController()
         newsFeed.view.backgroundColor = .white
+        
+        let createWorkout = NewOrSavedWorkoutViewController()
+        createWorkout.view.backgroundColor = .white
+        
         let profile = ProfileViewController()
         profile.view.backgroundColor = .white
         
@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         newsFeed.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         profile.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)
         
-        let controllers = [createWorkout, newsFeed, profile]
+        let controllers = [newsFeed, createWorkout, profile]
         tabBarController.viewControllers = controllers
         tabBarController.viewControllers = controllers.map { UINavigationController(rootViewController: $0)}
         

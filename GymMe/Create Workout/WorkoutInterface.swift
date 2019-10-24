@@ -12,7 +12,7 @@ struct Workout {
     let excerciseLst: [Excercise]
     let userID: UUID
     let workoutID: UUID
-    let time: NSDate
+    let time: Date
 }
 
 struct Excercise {

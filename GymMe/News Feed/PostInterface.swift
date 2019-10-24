@@ -15,5 +15,5 @@ struct FeedPost {
     let pictures: [UIImage]?
     let title: String
     let description: String
-    let time: NSDate
+    let time: Date
 }
