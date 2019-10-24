@@ -17,7 +17,7 @@ struct Workout {
 
 struct Excercise {
     let lstSets: [ExcerciseSet]
-    let excerciseType: Int // Enum
+    let excerciseName: String // TODO: Change this to an enum so we can have pictures/videos of excercises
 }
 
 struct ExcerciseSet {

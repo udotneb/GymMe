@@ -14,13 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let tabBarController = UITabBarController()
         
         let createWorkout = NewOrSavedWorkoutViewController()
-//        let createWorkout = FinishedLoggingWorkoutController() // for prototyping
+//        let createWorkout = LogWorkoutViewController() // for prototyping
         
         createWorkout.view.backgroundColor = .white
         let newsFeed = NewsFeedViewController()
@@ -28,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let profile = ProfileViewController()
         profile.view.backgroundColor = .white
         
+        // TODO: change these symbols
         createWorkout.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 0)
         newsFeed.tabBarItem = UITabBarItem(tabBarSystemItem: .downloads, tag: 1)
         profile.tabBarItem = UITabBarItem(tabBarSystemItem: .history, tag: 2)

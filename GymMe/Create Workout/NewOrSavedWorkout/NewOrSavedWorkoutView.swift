@@ -10,7 +10,7 @@ import UIKit
 
 class NewOrSavedWorkoutView: UIView {
     // TODO: ADD UISCROLLVIEW TO KEEP SAVED WORKOUTS
-    private var newWorkoutButton: UIButton = {
+    private let newWorkoutButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(newWorkoutPressed), for: .touchUpInside)
         button.backgroundColor = .clear
@@ -22,14 +22,14 @@ class NewOrSavedWorkoutView: UIView {
         return button
     }()
     
-    private var savedWorkoutLabel: UILabel = {
+    private let savedWorkoutLabel: UILabel = {
         let label = UILabel()
         label.text = "Saved Workouts"
         label.textColor = .black
         return label
     }()
     
-    private var horizontalBlackLine: UIView = {
+    private let horizontalBlackLine: UIView = {
         let view = UIView()
         view.backgroundColor = .black
         return view

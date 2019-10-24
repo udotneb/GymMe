@@ -12,7 +12,7 @@ import SkyFloatingLabelTextField
 class FinishedLoggingWorkoutView: UIView {
     // TODO: add description box
     
-    var titleInput: UITextField = {
+    let titleInput: UITextField = {
         let textField = SkyFloatingLabelTextField()
         textField.placeholder = "Title of your workout"
         textField.title = "Title"
@@ -21,7 +21,7 @@ class FinishedLoggingWorkoutView: UIView {
     }()
     
     
-    private var numberImagesSelectedLabel: UILabel = {
+    private let numberImagesSelectedLabel: UILabel = {
         let label = UILabel()
         label.text = "Number images selected: 0"
         label.textColor = .black
@@ -29,7 +29,7 @@ class FinishedLoggingWorkoutView: UIView {
     }()
     
     
-    private var imagePickButton: UIButton = {
+    private let imagePickButton: UIButton = {
         let button = UIButton()
         button.setTitle("+", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 50)
@@ -41,7 +41,7 @@ class FinishedLoggingWorkoutView: UIView {
         return button
     }()
     
-    private var postWorkoutButton: UIButton = {
+    private let postWorkoutButton: UIButton = {
         let button = UIButton()
         button.setTitle("Post Workout", for: .normal)
         button.setTitleColor(.black, for: .normal)

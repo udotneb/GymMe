@@ -1,20 +1,24 @@
 PODS:
   - ImagePicker (3.1.0)
+  - McPicker (2.0.1)
   - SkyFloatingLabelTextField (3.7.0)
 
 DEPENDENCIES:
   - ImagePicker
+  - McPicker (~> 2.0.0)
   - SkyFloatingLabelTextField (~> 3.0)
 
 SPEC REPOS:
   trunk:
     - ImagePicker
+    - McPicker
     - SkyFloatingLabelTextField
 
 SPEC CHECKSUMS:
   ImagePicker: db1fd7626337b2577c523bef5f499bbbe5a37079
+  McPicker: a0a6b8ece8f1642e05401a29867463aba501188b
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
 
-PODFILE CHECKSUM: 7f7844ea1721b1b19862f38dbd7628912dd0b9e5
+PODFILE CHECKSUM: 6b0103b1a217ca934cda760b0b3b8a8ad429e2ea
 
 COCOAPODS: 1.8.1

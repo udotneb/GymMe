@@ -11,6 +11,10 @@
 		5D5624B3235BCD8600A0D793 /* FinishedLoggingWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624B2235BCD8600A0D793 /* FinishedLoggingWorkoutView.swift */; };
 		5D5624B6235BCDB500A0D793 /* FinishedLoggingWorkoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624B5235BCDB500A0D793 /* FinishedLoggingWorkoutController.swift */; };
 		5D5624B8235BD3F100A0D793 /* UITextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624B7235BD3F100A0D793 /* UITextInput.swift */; };
+		5D5624BD235F7CFD00A0D793 /* ExcercseSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624BC235F7CFD00A0D793 /* ExcercseSetView.swift */; };
+		5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */; };
+		5D5624C1235F8FD500A0D793 /* ExcerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */; };
+		5D5624C3235F918200A0D793 /* ExcerciseSetNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */; };
 		5DC74890235A3EAF005E1FE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */; };
 		5DC74892235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC74891235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift */; };
 		5DC74895235A3EAF005E1FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC74893235A3EAF005E1FE1 /* Main.storyboard */; };
@@ -24,6 +28,9 @@
 		5DC748C5235A411D005E1FE1 /* WorkoutInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC748C4235A411D005E1FE1 /* WorkoutInterface.swift */; };
 		5DC748C9235A438C005E1FE1 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC748C8235A438C005E1FE1 /* PostInterface.swift */; };
 		5DC748CE235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC748CD235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift */; };
+		5DFA6C56235FBD3B0037C61D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */; };
+		5DFA6C58235FC1200037C61D /* LogWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */; };
+		5DFA6C5A235FD4D50037C61D /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */; };
 		78EF2D9430906D71FBC5E2C3 /* Pods_GymMeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A33A7AA7BD692EF38F0AB64 /* Pods_GymMeTests.framework */; };
 		88DDCDBE30515925D36CCDB0 /* Pods_GymMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52099E1745C78768D41CC2FD /* Pods_GymMe.framework */; };
 		F0C8F7DDB5A113659B52436D /* Pods_GymMe_GymMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EC22943E01C890B57E7E137 /* Pods_GymMe_GymMeUITests.framework */; };
@@ -58,6 +65,10 @@
 		5D5624B2235BCD8600A0D793 /* FinishedLoggingWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedLoggingWorkoutView.swift; sourceTree = "<group>"; };
 		5D5624B5235BCDB500A0D793 /* FinishedLoggingWorkoutController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishedLoggingWorkoutController.swift; sourceTree = "<group>"; };
 		5D5624B7235BD3F100A0D793 /* UITextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextInput.swift; sourceTree = "<group>"; };
+		5D5624BC235F7CFD00A0D793 /* ExcercseSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcercseSetView.swift; sourceTree = "<group>"; };
+		5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutViewController.swift; sourceTree = "<group>"; };
+		5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseView.swift; sourceTree = "<group>"; };
+		5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseSetNamesView.swift; sourceTree = "<group>"; };
 		5DC7488C235A3EAF005E1FE1 /* GymMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC74891235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrSavedWorkoutViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -77,6 +88,9 @@
 		5DC748C4235A411D005E1FE1 /* WorkoutInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterface.swift; sourceTree = "<group>"; };
 		5DC748C8235A438C005E1FE1 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
 		5DC748CD235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrSavedWorkoutView.swift; sourceTree = "<group>"; };
+		5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
 		903988EC1F920D9329AE0D6B /* Pods-GymMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymMe.release.xcconfig"; path = "Target Support Files/Pods-GymMe/Pods-GymMe.release.xcconfig"; sourceTree = "<group>"; };
 		B4874AD2B63CC744B8B6223A /* Pods-GymMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymMeTests.debug.xcconfig"; path = "Target Support Files/Pods-GymMeTests/Pods-GymMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,6 +128,8 @@
 			children = (
 				5D5624AE235BCA7C00A0D793 /* UILabelExtension.swift */,
 				5D5624B7235BD3F100A0D793 /* UITextInput.swift */,
+				5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */,
+				5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -134,6 +150,18 @@
 				5D5624B2235BCD8600A0D793 /* FinishedLoggingWorkoutView.swift */,
 			);
 			path = FinishedLoggingWorkout;
+			sourceTree = "<group>";
+		};
+		5D5624BB235F7C0D00A0D793 /* LogWorkout */ = {
+			isa = PBXGroup;
+			children = (
+				5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */,
+				5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */,
+				5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */,
+				5D5624BC235F7CFD00A0D793 /* ExcercseSetView.swift */,
+				5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */,
+			);
+			path = LogWorkout;
 			sourceTree = "<group>";
 		};
 		5DC74883235A3EAF005E1FE1 = {
@@ -197,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				5D5624B1235BCCA100A0D793 /* NewOrSavedWorkout */,
+				5D5624BB235F7C0D00A0D793 /* LogWorkout */,
 				5D5624B4235BCD8A00A0D793 /* FinishedLoggingWorkout */,
 				5DC748C4235A411D005E1FE1 /* WorkoutInterface.swift */,
 			);
@@ -487,13 +516,20 @@
 				5D5624B3235BCD8600A0D793 /* FinishedLoggingWorkoutView.swift in Sources */,
 				5D5624B6235BCDB500A0D793 /* FinishedLoggingWorkoutController.swift in Sources */,
 				5DC748CE235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift in Sources */,
+				5DFA6C58235FC1200037C61D /* LogWorkoutView.swift in Sources */,
+				5D5624C1235F8FD500A0D793 /* ExcerciseView.swift in Sources */,
 				5DC748C3235A3FC0005E1FE1 /* ProfileViewController.swift in Sources */,
 				5DC74890235A3EAF005E1FE1 /* AppDelegate.swift in Sources */,
+				5DFA6C56235FBD3B0037C61D /* UIViewExtension.swift in Sources */,
 				5D5624B8235BD3F100A0D793 /* UITextInput.swift in Sources */,
 				5DC748C1235A3F8D005E1FE1 /* NewsFeedViewController.swift in Sources */,
+				5DFA6C5A235FD4D50037C61D /* UIScrollViewExtension.swift in Sources */,
+				5D5624C3235F918200A0D793 /* ExcerciseSetNamesView.swift in Sources */,
 				5DC748C5235A411D005E1FE1 /* WorkoutInterface.swift in Sources */,
 				5D5624AF235BCA7C00A0D793 /* UILabelExtension.swift in Sources */,
+				5D5624BD235F7CFD00A0D793 /* ExcercseSetView.swift in Sources */,
 				5DC748C9235A438C005E1FE1 /* PostInterface.swift in Sources */,
+				5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

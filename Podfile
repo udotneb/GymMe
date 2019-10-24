@@ -8,6 +8,7 @@ target 'GymMe' do
   # Pods for GymMe
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'ImagePicker'
+  pod 'McPicker', '~> 2.0.0'
 
   target 'GymMeTests' do
     inherit! :search_paths
