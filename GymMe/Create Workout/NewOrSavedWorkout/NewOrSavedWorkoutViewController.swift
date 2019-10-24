@@ -18,7 +18,8 @@ class NewOrSavedWorkoutViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "Log Workout"
         self.view.addSubview(newOrSaved)
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: nil, action: nil)
+        
         newOrSaved.translatesAutoresizingMaskIntoConstraints = false
         newOrSaved.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -10).isActive = true
         newOrSaved.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true

@@ -9,12 +9,21 @@ import UIKit
 import ImagePicker
 
 class FinishedLoggingWorkoutController: UIViewController, ImagePickerDelegate {
-    var builtWorkout: Workout? // instantiated from previous view controller
+    var finishedWorkout: Workout? // instantiated from previous view controller
     
     private var images: [UIImage]?
     private var finishedLoggingView: FinishedLoggingWorkoutView = {
         return FinishedLoggingWorkoutView()
     }()
+    
+    init(finishedWorkout: Workout?) {
+        self.finishedWorkout = finishedWorkout
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,15 +55,29 @@ class FinishedLoggingWorkoutController: UIViewController, ImagePickerDelegate {
     
     
     @objc func postWorkoutButtonPressed(sender: UIButton!) {
-        let title = finishedLoggingView.titleInput.text!
-        let userID = builtWorkout?.userID
-        let workoutID = builtWorkout?.workoutID
+        guard let workout = finishedWorkout else {
+            return
+        }
+        
+        guard let title = finishedLoggingView.titleInput.text else {
+            return
+        }
+        
+        let userID = workout.userID
+        let workoutID = workout.workoutID
         let description = "" // TODO: Add this later
         let postID = UUID.init()
         let time = NSDate()
-        let post = Post(postID: postID, workoutID: workoutID, userID: userID, pictures: self.images,
-                        title: title, description: description, time: time)
+        let post = Post(postID: postID,
+                        workoutID: workoutID,
+                        userID: userID,
+                        pictures: self.images,
+                        title: title,
+                        description: description,
+                        time: time)
+        // TODO: save workout and post here
         print(post)
+        print(workout)
     }
     
     // MARK: - ImagePickerDelegate

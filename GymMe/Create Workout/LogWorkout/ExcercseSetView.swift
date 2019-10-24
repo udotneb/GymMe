@@ -97,4 +97,14 @@ class ExcercseSetView: UIView {
     func getReps() -> String? {
         return repsTextInput.text
     }
+    
+    func getExcerciseSetStruct() -> ExcerciseSet? {
+        guard let reps = Int(getReps()!) else {
+            return nil
+        }
+        guard let weight = Int(getWeight()!) else {
+            return nil
+        }
+        return ExcerciseSet(reps: reps, weight: weight)
+    }
 }

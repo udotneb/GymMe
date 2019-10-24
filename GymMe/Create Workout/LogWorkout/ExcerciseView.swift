@@ -9,14 +9,16 @@
 import UIKit
 
 class ExcerciseView: UIView {
+    private var excerciseName: String
+    
     private let excerciseNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
         return label
     }()
     
-    private let workoutSetNames = ExcerciseSetNamesView()
-    private var workoutSets: [ExcercseSetView] = [ExcercseSetView(setNumber: 1)]
+    private let workoutSetNamesView = ExcerciseSetNamesView()
+    private var workoutSetViewLst: [ExcercseSetView] = [ExcercseSetView(setNumber: 1)]
     private var c: [NSLayoutConstraint] = []
     
     private let addSetButton: UIButton = {
@@ -32,9 +34,10 @@ class ExcerciseView: UIView {
     }()
     
     init(excerciseName: String) {
+        self.excerciseName = excerciseName
         super.init(frame: UIScreen.main.bounds)
-        excerciseNameLabel.text = excerciseName
         
+        excerciseNameLabel.text = self.excerciseName
         updateAnchors()
     }
     
@@ -54,18 +57,18 @@ class ExcerciseView: UIView {
         c.append(excerciseNameLabel.rightAnchor.constraint(equalTo: self.rightAnchor))
         c.append(excerciseNameLabel.heightAnchor.constraint(equalToConstant: 25))
         
-        if !workoutSetNames.isDescendant(of: self) {
-            self.addSubview(workoutSetNames)
+        if !workoutSetNamesView.isDescendant(of: self) {
+            self.addSubview(workoutSetNamesView)
         }
-        workoutSetNames.translatesAutoresizingMaskIntoConstraints = false
+        workoutSetNamesView.translatesAutoresizingMaskIntoConstraints = false
         
-        c.append(workoutSetNames.topAnchor.constraint(equalTo: excerciseNameLabel.bottomAnchor, constant: 10))
-        c.append(workoutSetNames.leftAnchor.constraint(equalTo: self.leftAnchor))
-        c.append(workoutSetNames.rightAnchor.constraint(equalTo: self.rightAnchor))
-        c.append(workoutSetNames.heightAnchor.constraint(equalToConstant: 25))
+        c.append(workoutSetNamesView.topAnchor.constraint(equalTo: excerciseNameLabel.bottomAnchor, constant: 10))
+        c.append(workoutSetNamesView.leftAnchor.constraint(equalTo: self.leftAnchor))
+        c.append(workoutSetNamesView.rightAnchor.constraint(equalTo: self.rightAnchor))
+        c.append(workoutSetNamesView.heightAnchor.constraint(equalToConstant: 25))
 
-        for i in 0..<workoutSets.count {
-            let workoutSet = workoutSets[i]
+        for i in 0..<workoutSetViewLst.count {
+            let workoutSet = workoutSetViewLst[i]
             workoutSet.translatesAutoresizingMaskIntoConstraints = false
             
             if !workoutSet.isDescendant(of: self) {
@@ -73,9 +76,9 @@ class ExcerciseView: UIView {
             }
             
             if i == 0 {
-                c.append(workoutSet.topAnchor.constraint(equalTo: workoutSetNames.bottomAnchor))
+                c.append(workoutSet.topAnchor.constraint(equalTo: workoutSetNamesView.bottomAnchor))
             } else {
-                c.append(workoutSet.topAnchor.constraint(equalTo: workoutSets[i-1].bottomAnchor, constant:5))
+                c.append(workoutSet.topAnchor.constraint(equalTo: workoutSetViewLst[i-1].bottomAnchor, constant:5))
             }
             
             c.append(workoutSet.leftAnchor.constraint(equalTo: self.leftAnchor))
@@ -88,7 +91,7 @@ class ExcerciseView: UIView {
         }
         addSetButton.translatesAutoresizingMaskIntoConstraints = false
         
-        c.append(addSetButton.topAnchor.constraint(equalTo: workoutSets[workoutSets.count - 1].bottomAnchor, constant: 10))
+        c.append(addSetButton.topAnchor.constraint(equalTo: workoutSetViewLst[workoutSetViewLst.count - 1].bottomAnchor, constant: 10))
         c.append(addSetButton.leftAnchor.constraint(equalTo: self.leftAnchor))
         c.append(addSetButton.rightAnchor.constraint(equalTo: self.rightAnchor))
         c.append(addSetButton.heightAnchor.constraint(equalToConstant: 40))
@@ -105,19 +108,33 @@ class ExcerciseView: UIView {
     
     private func addNewSet() {
         // adds a new set, weight, reps row to the UI, copying over the previous weight and reps
-        // workoutSets must always be atleast length one
-        let previousWeight = workoutSets[workoutSets.count - 1].getWeight()
-        let previousReps = workoutSets[workoutSets.count - 1].getReps()
+        // workoutSetViewLst must always be atleast length one
+        let previousWeight = workoutSetViewLst[workoutSetViewLst.count - 1].getWeight()
+        let previousReps = workoutSetViewLst[workoutSetViewLst.count - 1].getReps()
         
-        let newWorkoutSet = ExcercseSetView(setNumber: workoutSets.count + 1,
+        let newWorkoutSet = ExcercseSetView(setNumber: workoutSetViewLst.count + 1,
                                            previousWeight: previousWeight,
                                            previousReps: previousReps)
-        workoutSets.append(newWorkoutSet)
+        workoutSetViewLst.append(newWorkoutSet)
         updateAnchors()
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.excerciseName = ""
         super.init(coder: aDecoder)
     }
     
+    func getExcerciseStruct() -> Excercise? {
+        var lstSets: [ExcerciseSet] = []
+        for w in workoutSetViewLst {
+            if let excerciseSet = w.getExcerciseSetStruct() {
+                lstSets.append(excerciseSet)
+            }
+        }
+        if lstSets.count > 0 {
+            return Excercise(lstSets: lstSets,
+                             excerciseName: self.excerciseName)
+        }
+        return nil
+    }
 }

@@ -16,7 +16,7 @@ class LogWorkoutViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Finish", style: .done, target: self, action: #selector(finishButtonPressed))
-
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: nil, action: nil)
         
         logWorkoutView = LogWorkoutView(parentViewController: self)
         
@@ -29,7 +29,8 @@ class LogWorkoutViewController: UIViewController {
     }
     
     @objc private func finishButtonPressed(sender: UIBarButtonItem!) {
-        self.navigationController?.pushViewController(FinishedLoggingWorkoutController(), animated: true)
+        let finishedLoggingWorkoutController = FinishedLoggingWorkoutController(finishedWorkout: self.logWorkoutView?.getWorkoutStruct())
+        self.navigationController?.pushViewController(finishedLoggingWorkoutController, animated: true)
     }
     
     func addExcercisePopupPicker(sender: UIButton!) {

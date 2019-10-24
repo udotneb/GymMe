@@ -17,6 +17,7 @@ class LogWorkoutView: UIView {
     
     private let scrollView = ControlContainableScrollView()
     private let stackView = UIStackView()
+    private var excerciseViewLst: [ExcerciseView] = []
     
     private let addExcerciseButton: UIButton = {
         let button = UIButton()
@@ -29,8 +30,6 @@ class LogWorkoutView: UIView {
         button.layer.borderColor = UIColor.black.cgColor
         return button
     }()
-    
-    private var numberOfViews = 0
     
     init(parentViewController: LogWorkoutViewController) {
         self.parentViewController = parentViewController
@@ -73,13 +72,29 @@ class LogWorkoutView: UIView {
     }
     
     func addNewExcerciseToScrollview(nameExcercise: String) {
-        let sampleExcerciseView = ExcerciseView(excerciseName: nameExcercise)
-        sampleExcerciseView.translatesAutoresizingMaskIntoConstraints = false
-        sampleExcerciseView.heightAnchor.constraint(equalToConstant: 300).isActive = true
-        stackView.insertArrangedSubview(sampleExcerciseView, at: numberOfViews)
-        numberOfViews += 1
+        let excerciseView = ExcerciseView(excerciseName: nameExcercise)
+        excerciseView.translatesAutoresizingMaskIntoConstraints = false
+        excerciseView.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        stackView.insertArrangedSubview(excerciseView, at: excerciseViewLst.count)
+        
+        excerciseViewLst.append(excerciseView)
     }
     
-    
+    func getWorkoutStruct() -> Workout? {
+        var excerciseLst: [Excercise] = []
+        for excercise in excerciseViewLst {
+            if let unwrapped = excercise.getExcerciseStruct() {
+                excerciseLst.append(unwrapped)
+            }
+        }
+        if excerciseLst.count > 0 {
+            let workout = Workout(excerciseLst: excerciseLst,
+                                  userID: UUID.init(), // find way to do this that persists
+                                  workoutID: UUID.init(),
+                                  time: NSDate())
+            return workout
+        }
+        return nil
+    }
     
 }

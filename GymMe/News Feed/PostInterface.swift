@@ -10,8 +10,8 @@ import UIKit
 
 struct Post {
     let postID: UUID
-    let workoutID: UUID?
-    let userID: UUID?
+    let workoutID: UUID
+    let userID: UUID
     let pictures: [UIImage]?
     let title: String
     let description: String
