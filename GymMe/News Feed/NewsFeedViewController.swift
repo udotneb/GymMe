@@ -36,6 +36,7 @@ class NewsFeedViewController: UIViewController {
         newsFeedView.addNewPost()
         print("refresh")
         self.refreshControl.endRefreshing()
+        getWorkout(workoutID: "463840EA-F165-4559-B81F-EC4AF11F1090")
     }
 
 }

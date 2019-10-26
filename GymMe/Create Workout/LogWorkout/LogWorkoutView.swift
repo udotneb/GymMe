@@ -98,8 +98,9 @@ class LogWorkoutView: UIView {
             }
         }
         if excerciseLst.count > 0 {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
             let workout = Workout(workoutID: UUID.init(),
-                                  userID: UUID.init(), // find way to do this that persists
+                                  userID: appDelegate.userID, // find way to do this that persists
                                   excerciseLst: excerciseLst,
                                   time: Date())
             return workout
