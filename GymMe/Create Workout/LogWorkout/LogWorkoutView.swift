@@ -41,7 +41,8 @@ class LogWorkoutView: UIView {
         scrollView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
         scrollView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
         scrollView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
-    
+        
+        scrollView.alwaysBounceVertical = true
         scrollView.delaysContentTouches = false
         
         let contentView = UIView()
@@ -97,9 +98,9 @@ class LogWorkoutView: UIView {
             }
         }
         if excerciseLst.count > 0 {
-            let workout = Workout(excerciseLst: excerciseLst,
+            let workout = Workout(workoutID: UUID.init(),
                                   userID: UUID.init(), // find way to do this that persists
-                                  workoutID: UUID.init(),
+                                  excerciseLst: excerciseLst,
                                   time: Date())
             return workout
         }

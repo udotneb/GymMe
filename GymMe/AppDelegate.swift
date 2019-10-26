@@ -8,12 +8,16 @@
 
 import UIKit
 import CoreData
+import Firebase
+import FirebaseStorage
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var databaseRef: DatabaseReference!
+    var storageRef: StorageReference!
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let tabBarController = UITabBarController()
@@ -39,6 +43,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
+        
+        FirebaseApp.configure()
+        self.databaseRef = Database.database().reference()
+        print(self.databaseRef)
+        
+        let storage = Storage.storage()
+        self.storageRef = storage.reference()
+        print(self.storageRef)
         
         return true
     }

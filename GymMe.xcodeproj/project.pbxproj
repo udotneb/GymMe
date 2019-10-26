@@ -20,6 +20,7 @@
 		5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */; };
 		5D5624C1235F8FD500A0D793 /* ExcerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */; };
 		5D5624C3235F918200A0D793 /* ExcerciseSetNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */; };
+		5DB6A9542364B9BE004E9B0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6A9532364B9BE004E9B0A /* ProfileView.swift */; };
 		5DC74890235A3EAF005E1FE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */; };
 		5DC74892235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC74891235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift */; };
 		5DC74895235A3EAF005E1FE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DC74893235A3EAF005E1FE1 /* Main.storyboard */; };
@@ -33,6 +34,15 @@
 		5DC748C5235A411D005E1FE1 /* WorkoutInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC748C4235A411D005E1FE1 /* WorkoutInterface.swift */; };
 		5DC748C9235A438C005E1FE1 /* PostInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC748C8235A438C005E1FE1 /* PostInterface.swift */; };
 		5DC748CE235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC748CD235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift */; };
+		5DCFFD622363F09500D88236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCFFD612363F09500D88236 /* GoogleService-Info.plist */; };
+		5DCFFD632363F09500D88236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCFFD612363F09500D88236 /* GoogleService-Info.plist */; };
+		5DCFFD642363F09500D88236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCFFD612363F09500D88236 /* GoogleService-Info.plist */; };
+		5DCFFD662363FC6C00D88236 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */; };
+		5DCFFD672363FC6C00D88236 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */; };
+		5DCFFD682363FC6C00D88236 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */; };
+		5DCFFD6A2363FF7B00D88236 /* PostWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD692363FF7B00D88236 /* PostWorkoutModel.swift */; };
+		5DCFFD6B2363FF7B00D88236 /* PostWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD692363FF7B00D88236 /* PostWorkoutModel.swift */; };
+		5DCFFD6C2363FF7B00D88236 /* PostWorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD692363FF7B00D88236 /* PostWorkoutModel.swift */; };
 		5DFA6C56235FBD3B0037C61D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */; };
 		5DFA6C58235FC1200037C61D /* LogWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */; };
 		5DFA6C5A235FD4D50037C61D /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */; };
@@ -79,6 +89,7 @@
 		5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutViewController.swift; sourceTree = "<group>"; };
 		5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseView.swift; sourceTree = "<group>"; };
 		5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseSetNamesView.swift; sourceTree = "<group>"; };
+		5DB6A9532364B9BE004E9B0A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5DC7488C235A3EAF005E1FE1 /* GymMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5DC74891235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrSavedWorkoutViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -98,6 +109,9 @@
 		5DC748C4235A411D005E1FE1 /* WorkoutInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutInterface.swift; sourceTree = "<group>"; };
 		5DC748C8235A438C005E1FE1 /* PostInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostInterface.swift; sourceTree = "<group>"; };
 		5DC748CD235A4BA5005E1FE1 /* NewOrSavedWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrSavedWorkoutView.swift; sourceTree = "<group>"; };
+		5DCFFD612363F09500D88236 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterface.swift; sourceTree = "<group>"; };
+		5DCFFD692363FF7B00D88236 /* PostWorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostWorkoutModel.swift; sourceTree = "<group>"; };
 		5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
@@ -175,6 +189,14 @@
 			path = LogWorkout;
 			sourceTree = "<group>";
 		};
+		5DB6A952236409B6004E9B0A /* DataInfra */ = {
+			isa = PBXGroup;
+			children = (
+				5DCFFD692363FF7B00D88236 /* PostWorkoutModel.swift */,
+			);
+			path = DataInfra;
+			sourceTree = "<group>";
+		};
 		5DC74883235A3EAF005E1FE1 = {
 			isa = PBXGroup;
 			children = (
@@ -201,14 +223,16 @@
 			isa = PBXGroup;
 			children = (
 				5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */,
-				5DC748C6235A41ED005E1FE1 /* Create Workout */,
 				5DC748C7235A4205005E1FE1 /* News Feed */,
+				5DC748C6235A41ED005E1FE1 /* Create Workout */,
 				5DC748CC235A4507005E1FE1 /* Profile */,
 				5D5624B0235BCA8600A0D793 /* Extensions */,
+				5DB6A952236409B6004E9B0A /* DataInfra */,
 				5DC74893235A3EAF005E1FE1 /* Main.storyboard */,
 				5DC74899235A3EB0005E1FE1 /* Assets.xcassets */,
 				5DC7489B235A3EB0005E1FE1 /* LaunchScreen.storyboard */,
 				5DC7489E235A3EB0005E1FE1 /* Info.plist */,
+				5DCFFD612363F09500D88236 /* GoogleService-Info.plist */,
 				5DC74896235A3EAF005E1FE1 /* GymMe.xcdatamodeld */,
 			);
 			path = GymMe;
@@ -260,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				5DC748C2235A3FC0005E1FE1 /* ProfileViewController.swift */,
+				5DB6A9532364B9BE004E9B0A /* ProfileView.swift */,
+				5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -397,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC7489D235A3EB0005E1FE1 /* LaunchScreen.storyboard in Resources */,
+				5DCFFD622363F09500D88236 /* GoogleService-Info.plist in Resources */,
 				5DC7489A235A3EB0005E1FE1 /* Assets.xcassets in Resources */,
 				5DC74895235A3EAF005E1FE1 /* Main.storyboard in Resources */,
 			);
@@ -406,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCFFD632363F09500D88236 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +441,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DCFFD642363F09500D88236 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,9 +556,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC74898235A3EAF005E1FE1 /* GymMe.xcdatamodeld in Sources */,
+				5DB6A9542364B9BE004E9B0A /* ProfileView.swift in Sources */,
 				5D397E5623624CBE000296D5 /* DateExtension.swift in Sources */,
 				5D397E58236251EF000296D5 /* TitleDescriptionView.swift in Sources */,
 				5DC74892235A3EAF005E1FE1 /* NewOrSavedWorkoutViewController.swift in Sources */,
+				5DCFFD662363FC6C00D88236 /* ProfileInterface.swift in Sources */,
 				5D397E5A236251FD000296D5 /* FeedPostView.swift in Sources */,
 				5D5624B3235BCD8600A0D793 /* FinishedLoggingWorkoutView.swift in Sources */,
 				5D5624B6235BCDB500A0D793 /* FinishedLoggingWorkoutController.swift in Sources */,
@@ -550,6 +581,7 @@
 				5D397E54236249B4000296D5 /* NameDatePicHeaderView.swift in Sources */,
 				5DC748C9235A438C005E1FE1 /* PostInterface.swift in Sources */,
 				5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */,
+				5DCFFD6A2363FF7B00D88236 /* PostWorkoutModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +590,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC748A8235A3EB0005E1FE1 /* GymMeTests.swift in Sources */,
+				5DCFFD672363FC6C00D88236 /* ProfileInterface.swift in Sources */,
+				5DCFFD6B2363FF7B00D88236 /* PostWorkoutModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -566,6 +600,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC748B3235A3EB0005E1FE1 /* GymMeUITests.swift in Sources */,
+				5DCFFD682363FC6C00D88236 /* ProfileInterface.swift in Sources */,
+				5DCFFD6C2363FF7B00D88236 /* PostWorkoutModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
