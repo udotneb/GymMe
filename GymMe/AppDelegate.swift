@@ -53,18 +53,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.storageRef = storage.reference()
         print(self.storageRef)
         
-//        getAllPosts() { posts in
-//            if let postLst = posts {
-//                print(postLst)
-//                print(postLst.count)
-//            }
-//        }
         
         getUserWorkouts(userID: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F") {
             postLst in
             if let unwrappedPostLst = postLst {
                 if !unwrappedPostLst.isEmpty{
                     print(totalWeightsPushed(workOutLst: unwrappedPostLst) )
+                    print(personalRecordsDict(workOutLst: unwrappedPostLst) )
+
                 } else {
                     print("Empty")
                 }

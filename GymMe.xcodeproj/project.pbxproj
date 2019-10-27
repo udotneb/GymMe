@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13D1EFBC2365A46300A730B1 /* WorkoutStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D1EFBB2365A46300A730B1 /* WorkoutStats.swift */; };
 		5D397E54236249B4000296D5 /* NameDatePicHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D397E53236249B4000296D5 /* NameDatePicHeaderView.swift */; };
 		5D397E5623624CBE000296D5 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D397E5523624CBE000296D5 /* DateExtension.swift */; };
 		5D397E58236251EF000296D5 /* TitleDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D397E57236251EF000296D5 /* TitleDescriptionView.swift */; };
@@ -77,6 +78,7 @@
 		01605D0544E4C0E5DE639E13 /* Pods-GymMe-GymMeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymMe-GymMeUITests.debug.xcconfig"; path = "Target Support Files/Pods-GymMe-GymMeUITests/Pods-GymMe-GymMeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		0A33A7AA7BD692EF38F0AB64 /* Pods_GymMeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymMeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		138E36CBD26EB3F8F5E6B2B7 /* Pods-GymMe-GymMeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymMe-GymMeUITests.release.xcconfig"; path = "Target Support Files/Pods-GymMe-GymMeUITests/Pods-GymMe-GymMeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		13D1EFBB2365A46300A730B1 /* WorkoutStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStats.swift; sourceTree = "<group>"; };
 		250D8F0CDA74487E3EC08F94 /* Pods-GymMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymMeTests.release.xcconfig"; path = "Target Support Files/Pods-GymMeTests/Pods-GymMeTests.release.xcconfig"; sourceTree = "<group>"; };
 		266F2E2918CB79062D8C81E4 /* Pods-GymMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GymMe.debug.xcconfig"; path = "Target Support Files/Pods-GymMe/Pods-GymMe.debug.xcconfig"; sourceTree = "<group>"; };
 		3EC22943E01C890B57E7E137 /* Pods_GymMe_GymMeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GymMe_GymMeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13D1EFBA2365A42700A730B1 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				13D1EFBB2365A46300A730B1 /* WorkoutStats.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
 		5D5624B0235BCA8600A0D793 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +223,8 @@
 		5DC74883235A3EAF005E1FE1 = {
 			isa = PBXGroup;
 			children = (
+				5DCD484223655F8400B06FAE /* Helper.swift */,
+				13D1EFBA2365A42700A730B1 /* Statistics */,
 				5DCD484423655F8C00B06FAE /* Helper */,
 				5DC7488E235A3EAF005E1FE1 /* GymMe */,
 				5DC748A6235A3EB0005E1FE1 /* GymMeTests */,
@@ -303,7 +315,6 @@
 		5DCD484423655F8C00B06FAE /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				5DCD484223655F8400B06FAE /* Helper.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -614,6 +625,7 @@
 				5DC748C5235A411D005E1FE1 /* WorkoutInterface.swift in Sources */,
 				5D5624AF235BCA7C00A0D793 /* UILabelExtension.swift in Sources */,
 				5D5624BD235F7CFD00A0D793 /* ExcercseSetView.swift in Sources */,
+				13D1EFBC2365A46300A730B1 /* WorkoutStats.swift in Sources */,
 				5D397E54236249B4000296D5 /* NameDatePicHeaderView.swift in Sources */,
 				5DC748C9235A438C005E1FE1 /* PostInterface.swift in Sources */,
 				5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */,
