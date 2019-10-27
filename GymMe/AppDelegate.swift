@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
-    let userID: String = "E621E1F8-C36C-495A-93FC-0C247A3E6E5F" // CHANGE FOR EACH USER
+    let userID: String = "Ben" // CHANGE FOR EACH USER
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -47,18 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         self.databaseRef = Database.database().reference()
-        print(self.databaseRef)
         
         let storage = Storage.storage()
         self.storageRef = storage.reference()
-        print(self.storageRef)
-        
-//        getAllPosts() { posts in
-//            if let postLst = posts {
-//                print(postLst)
-//                print(postLst.count)
-//            }
-//        }
         
         return true
     }

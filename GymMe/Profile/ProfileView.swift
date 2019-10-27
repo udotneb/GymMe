@@ -9,20 +9,28 @@
 import UIKit
 
 class ProfileView: UIView {
-    let profileImage: UIImageView = {
-        let image = UIImageView(image: UIImage.init(named:"BenPic")!)
-        return image
-    }()
-
+    var profilePic: UIImageView {
+        let imageView = UIImageView()
+        return imageView
+    }
+    
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Benjmain Ulrich"
         label.textAlignment = .center
         return label
     }()
     
-    init() {
+    init(profile: Profile, maxWeightPushedInDay: Int) {
         super.init(frame: UIScreen.main.bounds)
+        
+        let profileImage = UIImageView()
+
+        if let profilePhoto = profile.photo {
+            profilePic.image = profilePhoto
+        } else {
+            profilePic.image = UIImage.init(named: "LoadingImage")
+        }
+        
         self.addSubview(profileImage)
         profileImage.translatesAutoresizingMaskIntoConstraints = false
         profileImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
@@ -30,11 +38,13 @@ class ProfileView: UIView {
         profileImage.widthAnchor.constraint(equalTo: profileImage.heightAnchor).isActive = true
         profileImage.heightAnchor.constraint(equalToConstant: 50).isActive = true
         
+        
         self.addSubview(nameLabel)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 10).isActive = true
         nameLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         nameLabel.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        print("profile view loaded")
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -48,6 +48,8 @@ func getWorkout(workoutID: String, completion: @escaping (Workout?) -> () ) {
     }
 }
 
+
+
 func getAllWorkouts(completion: @escaping ([Workout]?) -> () ) {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     

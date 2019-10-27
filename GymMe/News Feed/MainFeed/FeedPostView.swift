@@ -17,7 +17,7 @@ class FeedPostView: UIView {
         self.parentViewController = parentViewController
         
         super.init(frame: UIScreen.main.bounds)
-        let nameDatePicHeaderView = NameDatePicHeaderView(profilePicture: profile.photo!, profileName: profile.name, date: workout.time)
+        let nameDatePicHeaderView = NameDatePicHeaderView(profilePicture: profile.photo!, profileName: profile.name, date: feedPost.time)
         self.addSubview(nameDatePicHeaderView)
         nameDatePicHeaderView.translatesAutoresizingMaskIntoConstraints = false
         nameDatePicHeaderView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -49,6 +49,7 @@ class FeedPostView: UIView {
             imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
             imageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
             imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+            imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
             
         } else {
             if let pictureIDs = feedPost.pictureID {
@@ -59,6 +60,8 @@ class FeedPostView: UIView {
                 imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
                 imageView.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
                 imageView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+                imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
+
                 self.parentViewController!.loadImageIntoView(pictureIDs: pictureIDs, imageView: imageView)
             }
             else {

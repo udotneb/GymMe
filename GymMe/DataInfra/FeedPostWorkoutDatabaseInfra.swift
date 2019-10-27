@@ -61,7 +61,6 @@ func downloadImage(pictureID: String, imageView: UIImageView, completion: @escap
     storageRef.getData(maxSize: 1000000, completion: { (data, error) in
         // Get download URL from snapshot
         if error != nil {
-            print(" we couldnt upload the img")
             completion(false)
         } else {
             if let imgData = data {

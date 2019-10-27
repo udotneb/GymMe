@@ -39,6 +39,7 @@ func getMockedSampleFeedPost() -> FeedPost {
     return FeedPost(postID: postID, workout: workoutID, userID: userID, pictures: [UIImage.init(named: "BenPic")!], pictureID: nil, title: "this is a title", description: description, time: time)
 }
 
+
 func getMockedProfile() -> Profile {
     return Profile(userID: "userID", name: "name", age: 100, photo: UIImage.init(named: "BenPic"))
 }
@@ -56,5 +57,7 @@ func getMockedRachelProfile() -> Profile {
     return Profile(userID: "Rachel", name: "Rachel Lou", age: 1, photo: UIImage.init(named: "RachelPic"))
 }
 
-
+let profileDict = ["Chuck": getMockedChuckProfile(),
+                   "Ben": getMockedBenProfile(),
+                   "Rachel": getMockedRachelProfile()]
 

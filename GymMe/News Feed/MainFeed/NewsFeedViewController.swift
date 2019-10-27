@@ -57,13 +57,14 @@ class NewsFeedViewController: UIViewController {
     }
     
     private func sortPostsByTime(postLst: [FeedPost]) -> [FeedPost] {
-        return postLst.sorted(by: { $0.time > $1.time })
+        // sorts so that the most recent is last
+        return postLst.sorted(by: { $0.time < $1.time })
     }
     
     func loadImageIntoView(pictureIDs: [String], imageView: UIImageView) {
         let pictureID = pictureIDs[0]
         downloadImage(pictureID: pictureID, imageView: imageView) { bool in
-            print(bool)
+            // print(bool)
         }
     }
 }

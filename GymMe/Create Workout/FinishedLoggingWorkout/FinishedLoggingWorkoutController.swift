@@ -72,7 +72,7 @@ class FinishedLoggingWorkoutController: UIViewController, ImagePickerDelegate {
         let feedPost = FeedPost(postID: postID,
                                 workout: workout,
                                 userID: userID,
-                                pictures: [UIImage.init(named: "BenPic")!],
+                                pictures: self.images,
                                 pictureID: nil,
                                 title: title,
                                 description: description,
