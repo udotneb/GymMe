@@ -26,17 +26,22 @@ class NewsFeedViewController: UIViewController {
         newsFeedView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 5).isActive = true
         newsFeedView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         
-//        self.refreshControl.attributedTitle = NSAttributedString(string: "Frissítéshez húzzad! :)")
         self.refreshControl.addTarget(self, action: #selector(refresh), for: UIControl.Event.valueChanged)
         newsFeedView.scrollView.addSubview(refreshControl)
     }
     
-    @objc func refresh(sender: AnyObject)
-    {
+    @objc func refresh(sender: AnyObject) {
         newsFeedView.addNewPost()
         print("refresh")
         self.refreshControl.endRefreshing()
-        getWorkout(workoutID: "463840EA-F165-4559-B81F-EC4AF11F1090")
+        
+        getWorkout(workoutID: "CA31E62E-6A5F-4558-B243-3A2A2173586D") { (workout) in
+            print(workout)
+        }
+
+        getFeedPost(postID: "6C59B0B1-3927-490D-8E65-64DD4B764AA2") { (post) in
+            print(post)
+        }
     }
 
 }

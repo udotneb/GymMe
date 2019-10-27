@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
-    var userID = UUID.init(uuidString: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F")! // CHANGE FOR EACH USER
+    let userID: String = "E621E1F8-C36C-495A-93FC-0C247A3E6E5F" // CHANGE FOR EACH USER
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
