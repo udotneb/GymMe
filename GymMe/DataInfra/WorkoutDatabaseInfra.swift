@@ -82,6 +82,7 @@ func getWorkout(workoutID: String, completion: @escaping (Workout?) -> () ) {
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
         guard let dateTime = dateFormatter.date(from: time) else {
             print("time can't be converted")
+            completion(nil)
             return
         }
         
@@ -90,6 +91,7 @@ func getWorkout(workoutID: String, completion: @escaping (Workout?) -> () ) {
         
     }) { (error) in
         print(error.localizedDescription)
+        completion(nil)
     }
 }
 

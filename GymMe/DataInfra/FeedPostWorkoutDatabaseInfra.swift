@@ -54,7 +54,7 @@ private func uploadImage(image: UIImage, id: String) {
     }
 }
 
-private func downloadImage(id: String) {
+private func downloadImage(id: String, completion: @escaping (UIImage?) -> () ) {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let storageRef = appDelegate.storageRef.child("Images").child(id)
     storageRef.getData(maxSize: 1000000, completion: { (data, error) in
@@ -62,14 +62,13 @@ private func downloadImage(id: String) {
         if error != nil {
             
             print(" we couldnt upload the img")
-            
+            completion(nil)
         } else {
             
             if let imgData = data {
                 
                 if let img = UIImage(data: imgData) {
-                    
-                    print("image found")
+                    completion(img)
                 }
             }
         }
@@ -80,13 +79,14 @@ private func downloadImage(id: String) {
     
 
 
-func getFeedPost(postID: String) {
+func getFeedPost(postID: String, completion: @escaping (FeedPost?) -> () ) {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     appDelegate.databaseRef.child("Posts").child(postID).observeSingleEvent(of: .value, with: { (snapshot) in
         // Get user value
         guard let value = snapshot.value as? NSDictionary else {
             print("can't convert value to dictionary")
+            completion(nil)
             return
         }
         
@@ -95,30 +95,27 @@ func getFeedPost(postID: String) {
             return
         }
         
-        guard let pictureIDs = value["pictureID"] as? [String] else {
-            print("cant get picture IDs")
-            return
-        }
-        
-        downloadImage(id: pictureIDs[0])
-        
         guard let time = value["time"] as? String else {
             print("cant get time")
+            completion(nil)
             return
         }
         
         guard let title = value["title"] as? String else {
             print("cant get title")
+            completion(nil)
             return
         }
         
         guard let userID = value["userID"] as? String else {
             print("cant get userID")
+            completion(nil)
             return
         }
         
         guard let workoutID = value["workoutID"] as? String else {
             print("cant get workoutID")
+            completion(nil)
             return
         }
         
@@ -128,21 +125,36 @@ func getFeedPost(postID: String) {
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
         guard let dateTime = dateFormatter.date(from: time) else {
             print("time can't be converted")
+            completion(nil)
             return
         }
         
+        // TODO: Stop hardcoding pictureIDs
+        guard let pictureIDs = value["pictureID"] as? [String] else {
+            print("cant get picture IDs")
+            completion(nil)
+            return
+        }
         
-        let feedPost = FeedPost(postID: postID,
-                                workoutID: workoutID,
-                                userID: userID,
-                                pictures: nil,
-                                title: title,
-                                description: description,
-                                time: dateTime)
-        
-        print(feedPost)
+        downloadImage(id: pictureIDs[0]) { (image) in
+            
+            if let pictures = image {
+                let feedPost = FeedPost(postID: postID,
+                                    workoutID: workoutID,
+                                    userID: userID,
+                                    pictures: [pictures],
+                                    title: title,
+                                    description: description,
+                                    time: dateTime)
+            
+                completion(feedPost)
+            } else {
+                completion(nil)
+            }
+        }
     }) { (error) in
         print(error.localizedDescription)
+        completion(nil)
     }
 
 }
