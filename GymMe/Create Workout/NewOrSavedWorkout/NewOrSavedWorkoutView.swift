@@ -10,6 +10,7 @@ import UIKit
 
 class NewOrSavedWorkoutView: UIView {
     // TODO: ADD UISCROLLVIEW TO KEEP SAVED WORKOUTS
+    
     private let newWorkoutButton: UIButton = {
         let button = UIButton()
         button.addTarget(self, action: #selector(newWorkoutPressed), for: .touchUpInside)
@@ -35,6 +36,11 @@ class NewOrSavedWorkoutView: UIView {
         return view
     }()
     
+    private let savedWorkoutView: UIView = {
+          return SavedWorkoutView()
+    }()
+ 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.addSubview(newWorkoutButton)
@@ -57,7 +63,14 @@ class NewOrSavedWorkoutView: UIView {
         horizontalBlackLine.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
         horizontalBlackLine.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
         horizontalBlackLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
-
+        
+        self.addSubview(savedWorkoutView)
+        savedWorkoutView.translatesAutoresizingMaskIntoConstraints = false
+        savedWorkoutView.topAnchor.constraint(equalTo: horizontalBlackLine.bottomAnchor, constant: 10).isActive = true
+        savedWorkoutView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
+        savedWorkoutView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
+        savedWorkoutView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+    
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -68,4 +81,7 @@ class NewOrSavedWorkoutView: UIView {
     @objc private func newWorkoutPressed(sender: UIButton!) {
         NotificationCenter.default.post(name: NSNotification.Name("new workout button pressed"), object: nil)
     }
+    
+
+    
 }

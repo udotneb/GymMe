@@ -34,5 +34,10 @@ class NewOrSavedWorkoutViewController: UIViewController {
         navigationController?.pushViewController(LogWorkoutViewController(), animated: true)
     }
     
+    /*@objc private func savedWorkoutPressed() {
+        print("saved workout")
+        navigationController?.pushViewController(LogWorkoutViewController(), animated: true)
+    }*/
+    
 }
 
