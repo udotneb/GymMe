@@ -11,7 +11,7 @@ import UIKit
 func postFeedPost(feedPost: FeedPost) {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let postID = feedPost.postID
-    let workoutID = feedPost.workoutID
+    let workoutID = feedPost.workout.workoutID
     let userID = feedPost.userID
     
     var pictureIDs: [String] = []
@@ -80,6 +80,9 @@ private func downloadImage(id: String, completion: @escaping (UIImage?) -> () ) 
 
 
 func getFeedPost(postID: String, completion: @escaping (FeedPost?) -> () ) {
+    
+    // if completion type is nil, then there is no feed post of postID
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     appDelegate.databaseRef.child("Posts").child(postID).observeSingleEvent(of: .value, with: { (snapshot) in
@@ -135,23 +138,26 @@ func getFeedPost(postID: String, completion: @escaping (FeedPost?) -> () ) {
             completion(nil)
             return
         }
-        
-        downloadImage(id: pictureIDs[0]) { (image) in
-            
-            if let pictures = image {
-                let feedPost = FeedPost(postID: postID,
-                                    workoutID: workoutID,
-                                    userID: userID,
-                                    pictures: [pictures],
-                                    title: title,
-                                    description: description,
-                                    time: dateTime)
-            
-                completion(feedPost)
-            } else {
-                completion(nil)
+        getWorkout(workoutID: workoutID) { (workout) in
+            downloadImage(id: pictureIDs[0]) { (image) in
+                if let unwrappedWorkout = workout{
+                    if let pictures = image {
+                        let feedPost = FeedPost(postID: postID,
+                                                workout: unwrappedWorkout,
+                                                userID: userID,
+                                                pictures: [pictures],
+                                                title: title,
+                                                description: description,
+                                                time: dateTime)
+                    
+                        completion(feedPost)
+                    } else {
+                        completion(nil)
+                    }
+                }
             }
         }
+            
     }) { (error) in
         print(error.localizedDescription)
         completion(nil)

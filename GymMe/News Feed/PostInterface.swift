@@ -10,7 +10,7 @@ import UIKit
 
 struct FeedPost {
     let postID: String
-    let workoutID: String
+    let workout: Workout
     let userID: String
     let pictures: [UIImage]?
     let title: String

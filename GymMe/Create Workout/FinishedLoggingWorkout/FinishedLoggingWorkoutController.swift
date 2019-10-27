@@ -69,12 +69,12 @@ class FinishedLoggingWorkoutController: UIViewController, ImagePickerDelegate {
         let postID = UUID.init().uuidString
         let time = Date()
         let feedPost = FeedPost(postID: postID,
-                                workoutID: workoutID,
-                        userID: userID,
-                        pictures: [UIImage.init(named: "BenPic")!],
-                        title: title,
-                        description: description,
-                        time: time)
+                                workout: workout,
+                                userID: userID,
+                                pictures: [UIImage.init(named: "BenPic")!],
+                                title: title,
+                                description: description,
+                                time: time)
         
         postWorkout(workout: workout)
         postFeedPost(feedPost: feedPost)
