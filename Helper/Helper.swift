@@ -42,3 +42,19 @@ func getMockedSampleFeedPost() -> FeedPost {
 func getMockedProfile() -> Profile {
     return Profile(userID: "userID", name: "name", age: 100, photo: UIImage.init(named: "BenPic"))
 }
+
+func getMockedChuckProfile() -> Profile {
+    return Profile(userID: "Chuck", name: "Chuck Tang", age: 22, photo: UIImage.init(named:
+        "ChuckPic"))
+}
+
+func getMockedBenProfile() -> Profile {
+    return Profile(userID: "Ben", name: "Ben Ulrich", age: 99, photo: UIImage.init(named: "BenPic"))
+}
+
+func getMockedRachelProfile() -> Profile {
+    return Profile(userID: "Rachel", name: "Rachel Lou", age: 1, photo: UIImage.init(named: "RachelPic"))
+}
+
+
+
