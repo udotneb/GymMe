@@ -43,10 +43,9 @@ class NewsFeedViewController: UIViewController {
                 let profileSample : Profile = getMockedProfile()
                 let sortedPosts = self.sortPostsByTime(postLst: postLst)
                 for post in sortedPosts {
-                    print(self.postIDSet.count)
                     
                     if !self.postIDSet.contains(post.postID) {
-                        self.newsFeedView?.addNewPost(feedPost: post, profile: profileSample)
+                        self.newsFeedView?.addNewPost(feedPost: post)
                     }
                     
                     self.postIDSet.insert(post.postID)
@@ -63,8 +62,10 @@ class NewsFeedViewController: UIViewController {
     
     func loadImageIntoView(pictureIDs: [String], imageView: UIImageView) {
         let pictureID = pictureIDs[0]
-        downloadImage(pictureID: pictureID, imageView: imageView) { bool in
-            // print(bool)
+        downloadImage(pictureID: pictureID, imageView: imageView) { error in
+            if let err = error {
+                print(err)
+            }
         }
     }
 }

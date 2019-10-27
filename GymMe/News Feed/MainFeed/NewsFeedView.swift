@@ -49,8 +49,8 @@ class NewsFeedView: UIView {
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
     }
     
-    func addNewPost(feedPost:FeedPost, profile: Profile) {
-        stackView.insertArrangedSubview(FeedPostView(feedPost: feedPost, workout: feedPost.workout, profile: profile,parentViewController: parentViewController!), at: 0)
+    func addNewPost(feedPost:FeedPost) {
+        stackView.insertArrangedSubview(FeedPostView(feedPost: feedPost, workout: feedPost.workout, profile: profileDict[feedPost.userID]!, parentViewController: parentViewController!), at: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {

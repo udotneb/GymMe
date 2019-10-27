@@ -21,12 +21,7 @@ class ProfileViewController: UIViewController {
         self.title = "Profile"
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        guard let profile = profileDict[appDelegate.userID] else {
-            print("profile not in profile dict!, check profileViewController")
-            return
-        }
-        
-        let profileView: UIView = ProfileView(profile: profile)
+        let profileView: UIView = ProfileView(profile: appDelegate.profile)
         
         self.view.addSubview(profileView)
         profileView.translatesAutoresizingMaskIntoConstraints = false

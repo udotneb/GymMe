@@ -54,26 +54,25 @@ private func uploadImage(image: UIImage, id: String) {
     }
 }
 
-func downloadImage(pictureID: String, imageView: UIImageView, completion: @escaping (Bool) -> () ) {
+func downloadImage(pictureID: String, imageView: UIImageView, completion: @escaping (Error?) -> () ) {
     // returns whether we can update imageView.image with the downloaded image
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let storageRef = appDelegate.storageRef.child("Images").child(pictureID)
-    storageRef.getData(maxSize: 1000000, completion: { (data, error) in
+    storageRef.getData(maxSize: 2000000, completion: { (data, error) in
         // Get download URL from snapshot
-        if error != nil {
-            completion(false)
+        if let err = error {
+            completion(err)
         } else {
             if let imgData = data {
                 if let img = UIImage(data: imgData) {
                     imageView.image = img
                     print("updated image!")
-                    completion(true)
+                    completion(nil)
                 }
             }
         }
-        completion(false)
+        completion(nil)
     })
-    print("finished download image")
 }
 
 func getAllPosts(completion: @escaping ([FeedPost]?) -> () ) {
@@ -147,11 +146,7 @@ private func dictionaryToFeedPost(postID: String, postIDDictionary: NSDictionary
     }
     
     // TODO: Stop hardcoding pictureIDs
-    guard let pictureIDs = postIDDictionary["pictureID"] as? [String] else {
-        print("cant get picture IDs")
-        return nil
-    }
-    
+    let pictureIDs = postIDDictionary["pictureID"] as? [String]
 
     return FeedPost(postID: postID,
                             workout: workout,

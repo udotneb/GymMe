@@ -17,10 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var databaseRef: DatabaseReference!
     var storageRef: StorageReference!
-    let userID: String = "Ben" // CHANGE FOR EACH USER
+    let userID: String = "Chuck" // CHANGE FOR EACH USER
+    
+    
+    var profile: Profile!
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        self.profile = profileDict[userID]!
         FirebaseApp.configure()
         self.databaseRef = Database.database().reference()
         
