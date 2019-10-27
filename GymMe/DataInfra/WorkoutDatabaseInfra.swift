@@ -74,11 +74,52 @@ func getAllWorkouts(completion: @escaping ([Workout]?) -> () ) {
         print(error.localizedDescription)
         completion(nil)
     }
-    
 }
-private func idDictionaryToWorkout(value: NSDictionary, workoutID: String) -> Workout? {
 
-    
+func getUserWorkouts(userID: String, completion: @escaping ([Workout]?) -> () ) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    appDelegate.databaseRef.child("Workouts").observeSingleEvent(of: .value, with: { (snapshot) in
+        guard let workoutIDDict = snapshot.value as? NSDictionary else {
+            print("can't convert value to dictionary")
+            completion(nil)
+            return
+        }
+        
+        var allWorkouts: [Workout] = []
+        for (workoutID,_) in workoutIDDict {
+            guard let value = workoutIDDict[workoutID] as? NSDictionary else {
+                print("can't convert value to dictionary")
+                completion(nil)
+                return
+            }
+            if let workout = idDictionaryToWorkout(value:value, workoutID: workoutID as! String) {
+                if (workout.userID == userID) {
+                    allWorkouts.append(workout)
+                }
+            }
+        }
+        print(allWorkouts)
+        completion(allWorkouts)
+    }) { (error) in
+        print(error.localizedDescription)
+        completion(nil)
+    }
+}
+
+func totalWeightsPushed(workOutLst: [Workout]) -> Int {
+    var total:Int = 0
+    for workOut in workOutLst {
+        for exercise in workOut.excerciseLst {
+            for exerciseSet in exercise.lstSets {
+                total += exerciseSet.reps * exerciseSet.weight
+            }
+        }
+    }
+    return total
+}
+
+
+private func idDictionaryToWorkout(value: NSDictionary, workoutID: String) -> Workout? {
     guard let time = value["time"] as? String else {
         print("cant get time")
         return nil

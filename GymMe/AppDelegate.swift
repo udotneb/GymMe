@@ -60,6 +60,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //            }
 //        }
         
+        getUserWorkouts(userID: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F") {
+            postLst in
+            if let unwrappedPostLst = postLst {
+                if !unwrappedPostLst.isEmpty{
+                    print(totalWeightsPushed(workOutLst: unwrappedPostLst) )
+                } else {
+                    print("Empty")
+                }
+            } else {
+                print("Nil")
+            }
+        }
         return true
     }
 
