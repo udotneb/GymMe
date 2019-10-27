@@ -9,7 +9,7 @@
 import UIKit
 
 struct Profile {
-    let userID: UUID
+    let userID: String
     let name: String
     let age: Int
     let photo: UIImage?

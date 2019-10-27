@@ -46,15 +46,18 @@ class NewsFeedView: UIView {
         stackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
         
-        stackView.addArrangedSubview(FeedPostView())
-        
+        addNewPost()
     }
     
     func addNewPost() {
-        stackView.insertArrangedSubview(FeedPostView(), at: 0)
+        let feedPostSample:FeedPost = getMockedSampleFeedPost()
+        let workoutSample:Workout = getMockedSampleWorkout()
+        let profileSample:Profile = getMockedProfile()
+        stackView.insertArrangedSubview(FeedPostView(feedPost: feedPostSample, workout: workoutSample, profile: profileSample), at: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
+
