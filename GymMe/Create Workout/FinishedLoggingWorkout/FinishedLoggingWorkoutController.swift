@@ -66,17 +66,18 @@ class FinishedLoggingWorkoutController: UIViewController, ImagePickerDelegate {
         let userID = workout.userID
         let workoutID = workout.workoutID
         let description = "" // TODO: Add this later
-        let postID = UUID.init()
+        let postID = UUID.init().uuidString
         let time = Date()
         let feedPost = FeedPost(postID: postID,
                                 workoutID: workoutID,
                         userID: userID,
-                        pictures: self.images,
+                        pictures: [UIImage.init(named: "BenPic")!],
                         title: title,
                         description: description,
                         time: time)
-        // TODO: POST structs feedPost and workout to AWS
+        
         postWorkout(workout: workout)
+        postFeedPost(feedPost: feedPost)
     }
     
     // MARK: - ImagePickerDelegate

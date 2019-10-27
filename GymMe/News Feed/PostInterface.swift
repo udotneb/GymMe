@@ -9,9 +9,9 @@
 import UIKit
 
 struct FeedPost {
-    let postID: UUID
-    let workoutID: UUID
-    let userID: UUID
+    let postID: String
+    let workoutID: String
+    let userID: String
     let pictures: [UIImage]?
     let title: String
     let description: String

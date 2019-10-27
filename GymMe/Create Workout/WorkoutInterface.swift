@@ -9,8 +9,8 @@
 import Foundation
 
 struct Workout {
-    let workoutID: UUID
-    let userID: UUID
+    let workoutID: String
+    let userID: String
     let excerciseLst: [Excercise]
     let time: Date
 }
