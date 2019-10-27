@@ -20,6 +20,7 @@
 		5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */; };
 		5D5624C1235F8FD500A0D793 /* ExcerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */; };
 		5D5624C3235F918200A0D793 /* ExcerciseSetNamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */; };
+		5DB3B4172365AD7E005C64B5 /* WorkoutStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB3B4162365AD7E005C64B5 /* WorkoutStats.swift */; };
 		5DB6A9542364B9BE004E9B0A /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6A9532364B9BE004E9B0A /* ProfileView.swift */; };
 		5DB6A9562364F3AE004E9B0A /* FeedPostWorkoutDatabaseInfra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB6A9552364F3AE004E9B0A /* FeedPostWorkoutDatabaseInfra.swift */; };
 		5DC74890235A3EAF005E1FE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */; };
@@ -39,15 +40,13 @@
 		5DCD484323655F8400B06FAE /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD484223655F8400B06FAE /* Helper.swift */; };
 		5DCD48462365612100B06FAE /* WorkoutPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD48452365612100B06FAE /* WorkoutPreviewView.swift */; };
 		5DCD484923656EF300B06FAE /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCD484823656EF300B06FAE /* UITextViewExtension.swift */; };
-		5DCFFD622363F09500D88236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCFFD612363F09500D88236 /* GoogleService-Info.plist */; };
-		5DCFFD632363F09500D88236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCFFD612363F09500D88236 /* GoogleService-Info.plist */; };
-		5DCFFD642363F09500D88236 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DCFFD612363F09500D88236 /* GoogleService-Info.plist */; };
 		5DCFFD662363FC6C00D88236 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */; };
 		5DCFFD672363FC6C00D88236 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */; };
 		5DCFFD682363FC6C00D88236 /* ProfileInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */; };
 		5DCFFD6A2363FF7B00D88236 /* WorkoutDatabaseInfra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD692363FF7B00D88236 /* WorkoutDatabaseInfra.swift */; };
 		5DCFFD6B2363FF7B00D88236 /* WorkoutDatabaseInfra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD692363FF7B00D88236 /* WorkoutDatabaseInfra.swift */; };
 		5DCFFD6C2363FF7B00D88236 /* WorkoutDatabaseInfra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DCFFD692363FF7B00D88236 /* WorkoutDatabaseInfra.swift */; };
+		5DE369602365A98200814152 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DE3695F2365A98200814152 /* GoogleService-Info.plist */; };
 		5DFA6C56235FBD3B0037C61D /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */; };
 		5DFA6C58235FC1200037C61D /* LogWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */; };
 		5DFA6C5A235FD4D50037C61D /* UIScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */; };
@@ -94,6 +93,7 @@
 		5D5624BE235F82D400A0D793 /* LogWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutViewController.swift; sourceTree = "<group>"; };
 		5D5624C0235F8FD500A0D793 /* ExcerciseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseView.swift; sourceTree = "<group>"; };
 		5D5624C2235F918200A0D793 /* ExcerciseSetNamesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExcerciseSetNamesView.swift; sourceTree = "<group>"; };
+		5DB3B4162365AD7E005C64B5 /* WorkoutStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutStats.swift; sourceTree = "<group>"; };
 		5DB6A9532364B9BE004E9B0A /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		5DB6A9552364F3AE004E9B0A /* FeedPostWorkoutDatabaseInfra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedPostWorkoutDatabaseInfra.swift; sourceTree = "<group>"; };
 		5DC7488C235A3EAF005E1FE1 /* GymMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GymMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,9 +119,9 @@
 		5DCD484223655F8400B06FAE /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		5DCD48452365612100B06FAE /* WorkoutPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPreviewView.swift; sourceTree = "<group>"; };
 		5DCD484823656EF300B06FAE /* UITextViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
-		5DCFFD612363F09500D88236 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "/Users/chuck/Desktop/GymMe/GymMe/GoogleService-Info.plist"; sourceTree = "<absolute>"; };
 		5DCFFD652363FC6C00D88236 /* ProfileInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInterface.swift; sourceTree = "<group>"; };
 		5DCFFD692363FF7B00D88236 /* WorkoutDatabaseInfra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDatabaseInfra.swift; sourceTree = "<group>"; };
+		5DE3695F2365A98200814152 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5DFA6C55235FBD3B0037C61D /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		5DFA6C57235FC1200037C61D /* LogWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogWorkoutView.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		5DFA6C59235FD4D50037C61D /* UIScrollViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollViewExtension.swift; sourceTree = "<group>"; };
@@ -157,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13D1EFBA2365A42700A730B1 /* Statistics */ = {
+			isa = PBXGroup;
+			children = (
+				5DB3B4162365AD7E005C64B5 /* WorkoutStats.swift */,
+			);
+			name = Statistics;
+			sourceTree = "<group>";
+		};
 		5D5624B0235BCA8600A0D793 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -213,7 +221,6 @@
 		5DC74883235A3EAF005E1FE1 = {
 			isa = PBXGroup;
 			children = (
-				5DCD484423655F8C00B06FAE /* Helper */,
 				5DC7488E235A3EAF005E1FE1 /* GymMe */,
 				5DC748A6235A3EB0005E1FE1 /* GymMeTests */,
 				5DC748B1235A3EB0005E1FE1 /* GymMeUITests */,
@@ -237,6 +244,8 @@
 			isa = PBXGroup;
 			children = (
 				5DC7488F235A3EAF005E1FE1 /* AppDelegate.swift */,
+				13D1EFBA2365A42700A730B1 /* Statistics */,
+				5DCD484423655F8C00B06FAE /* Helper */,
 				5DC748C7235A4205005E1FE1 /* News Feed */,
 				5DC748C6235A41ED005E1FE1 /* Create Workout */,
 				5DC748CC235A4507005E1FE1 /* Profile */,
@@ -246,7 +255,7 @@
 				5DC74899235A3EB0005E1FE1 /* Assets.xcassets */,
 				5DC7489B235A3EB0005E1FE1 /* LaunchScreen.storyboard */,
 				5DC7489E235A3EB0005E1FE1 /* Info.plist */,
-				5DCFFD612363F09500D88236 /* GoogleService-Info.plist */,
+				5DE3695F2365A98200814152 /* GoogleService-Info.plist */,
 				5DC74896235A3EAF005E1FE1 /* GymMe.xcdatamodeld */,
 			);
 			path = GymMe;
@@ -454,7 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DC7489D235A3EB0005E1FE1 /* LaunchScreen.storyboard in Resources */,
-				5DCFFD622363F09500D88236 /* GoogleService-Info.plist in Resources */,
+				5DE369602365A98200814152 /* GoogleService-Info.plist in Resources */,
 				5DC7489A235A3EB0005E1FE1 /* Assets.xcassets in Resources */,
 				5DC74895235A3EAF005E1FE1 /* Main.storyboard in Resources */,
 			);
@@ -464,7 +473,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DCFFD632363F09500D88236 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +480,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5DCFFD642363F09500D88236 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -614,6 +621,7 @@
 				5DC748C5235A411D005E1FE1 /* WorkoutInterface.swift in Sources */,
 				5D5624AF235BCA7C00A0D793 /* UILabelExtension.swift in Sources */,
 				5D5624BD235F7CFD00A0D793 /* ExcercseSetView.swift in Sources */,
+				5DB3B4172365AD7E005C64B5 /* WorkoutStats.swift in Sources */,
 				5D397E54236249B4000296D5 /* NameDatePicHeaderView.swift in Sources */,
 				5DC748C9235A438C005E1FE1 /* PostInterface.swift in Sources */,
 				5D5624BF235F82D400A0D793 /* LogWorkoutViewController.swift in Sources */,

@@ -21,6 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        self.databaseRef = Database.database().reference()
+        
+        let storage = Storage.storage()
+        self.storageRef = storage.reference()
+        
         let tabBarController = UITabBarController()
         
         let newsFeed = NewsFeedViewController()
@@ -45,24 +51,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
-        FirebaseApp.configure()
-        self.databaseRef = Database.database().reference()
+
         
-        let storage = Storage.storage()
-        self.storageRef = storage.reference()
-        
-        getUserWorkouts(userID: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F") {
-            postLst in
-            if let unwrappedPostLst = postLst {
-                if !unwrappedPostLst.isEmpty{
-                    print(totalWeightsPushed(workOutLst: unwrappedPostLst) )
-                } else {
-                    print("Empty")
-                }
-            } else {
-                print("Nil")
-            }
-        }
+//        getUserWorkouts(userID: "E621E1F8-C36C-495A-93FC-0C247A3E6E5F") {
+//            postLst in
+//            if let unwrappedPostLst = postLst {
+//                if !unwrappedPostLst.isEmpty{
+//                    print(totalWeightsPushed(workOutLst: unwrappedPostLst) )
+//                    print(personalRecordsDict(workOutLst: unwrappedPostLst) )
+//
+//                } else {
+//                    print("Empty")
+//                }
+//            } else {
+//                print("Nil")
+//            }
+//        }
         return true
     }
 

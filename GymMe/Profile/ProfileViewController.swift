@@ -26,7 +26,7 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        let profileView: UIView = ProfileView(profile: profile, maxWeightPushedInDay: 10)
+        let profileView: UIView = ProfileView(profile: profile)
         
         self.view.addSubview(profileView)
         profileView.translatesAutoresizingMaskIntoConstraints = false
