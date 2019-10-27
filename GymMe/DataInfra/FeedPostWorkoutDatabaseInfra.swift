@@ -54,155 +54,114 @@ private func uploadImage(image: UIImage, id: String) {
     }
 }
 
-private func downloadImage(id: String, completion: @escaping (UIImage?) -> () ) {
+func downloadImage(pictureID: String, imageView: UIImageView, completion: @escaping (Bool) -> () ) {
+    // returns whether we can update imageView.image with the downloaded image
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    let storageRef = appDelegate.storageRef.child("Images").child(id)
+    let storageRef = appDelegate.storageRef.child("Images").child(pictureID)
     storageRef.getData(maxSize: 1000000, completion: { (data, error) in
         // Get download URL from snapshot
         if error != nil {
-            
             print(" we couldnt upload the img")
-            completion(nil)
+            completion(false)
         } else {
-            
             if let imgData = data {
-                
                 if let img = UIImage(data: imgData) {
-                    completion(img)
+                    imageView.image = img
+                    print("updated image!")
+                    completion(true)
                 }
             }
         }
+        completion(false)
     })
     print("finished download image")
 }
 
-func getFeedPost(postID: String, completion: @escaping (FeedPost?) -> () ) {
-    
-    // if completion type is nil, then there is no feed post of postID
-    
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    appDelegate.databaseRef.child("Posts").child(postID).observeSingleEvent(of: .value, with: { (snapshot) in
-        // Get user value
-        guard let postIDDictionary = snapshot.value as? NSDictionary else {
-            print("can't convert value to dictionary")
-            completion(nil)
-            return
-        }
-        dictionaryToFeedPost(postID: postID, postIDDictionary:postIDDictionary) { (post) in
-            completion(post)
-        }
-    })
-    
-}
-
-
-func getPostsAfterTime(timeCutoff: Date, completion: @escaping ([FeedPost]?) -> () ) {
+func getAllPosts(completion: @escaping ([FeedPost]?) -> () ) {
     // returns all post ID's after time
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    let sorted = appDelegate.databaseRef.child("Posts").queryOrdered(byChild: "time").observeSingleEvent(of: .value, with:{ (snapshot) in
-        
-        guard let value = snapshot.value as? NSDictionary else {
-            print("can't convert value to dictionary")
-            return
-        }
-        
-        var returnedFeedPostList: [FeedPost]? = []
-        
-        for v in value.keyEnumerator().reversed() {
-            let postID = v as! String
-            let postDict = value[v] as! NSDictionary
-            let dateTime = convertStringToDate(date: postDict["time"]! as! String)!
-            if dateTime > timeCutoff {
-                let group = DispatchGroup()
-                print("thread")
-                print(Thread.current.threadName)
-                dictionaryToFeedPost(postID: postID, postIDDictionary: postDict) { (post) in
-                    print("thread")
-                    print(Thread.current.threadName)
-                    if let p = post {
-                        print("appended")
-                        returnedFeedPostList?.append(p)
-                    } else {
-                        print("bad")
+    getAllWorkouts() { workoutLstWrapped in
+        if let workoutLst = workoutLstWrapped {
+            appDelegate.databaseRef.child("Posts").queryOrdered(byChild: "time").observeSingleEvent(of: .value, with:{ (snapshot) in
+                    guard let value = snapshot.value as? NSDictionary else {
+                        print("can't convert value to dictionary")
+                        return
                     }
-                }
-                print(dateTime)
-            } else {
-                break
-            }
+                
+                    var returnedFeedPostList: [FeedPost]? = []
+                
+                    for v in value.keyEnumerator() {
+                        let postID = v as! String
+                        let postDict = value[v] as! NSDictionary
+                        let dateTime = convertStringToDate(date: postDict["time"]! as! String)!
+                        if let p = dictionaryToFeedPost(postID: postID, postIDDictionary: postDict, workoutLst: workoutLst) {
+                            returnedFeedPostList?.append(p)
+                        }
+                    }
+                    completion(returnedFeedPostList)
+                    })
         }
-        print("completed")
-        completion(returnedFeedPostList)
-    })
+        completion(nil)
+    }
 }
 
 
-private func dictionaryToFeedPost(postID: String, postIDDictionary: NSDictionary, completion: @escaping (FeedPost?) -> () ) {
+private func dictionaryToFeedPost(postID: String, postIDDictionary: NSDictionary, workoutLst: [Workout]) -> FeedPost? {
     
     guard let description = postIDDictionary["description"] as? String else {
         print("cant get description")
-        return
+        return nil
     }
     
     guard let time = postIDDictionary["time"] as? String else {
         print("cant get time")
-        completion(nil)
-        return
+        return nil
     }
     
     guard let title = postIDDictionary["title"] as? String else {
         print("cant get title")
-        completion(nil)
-        return
+        return nil
     }
     
     guard let userID = postIDDictionary["userID"] as? String else {
         print("cant get userID")
-        completion(nil)
-        return
+        return nil
     }
     
     guard let workoutID = postIDDictionary["workoutID"] as? String else {
         print("cant get workoutID")
-        completion(nil)
-        return
+        return nil
+    }
+    
+    
+    var workout = workoutLst[0]
+    for w in workoutLst {
+        if workout.workoutID == workoutID {
+            workout = w
+        }
     }
     
     guard let dateTime = convertStringToDate(date: time) else {
         print("time can't be converted")
-        completion(nil)
-        return
+        return nil
     }
     
     // TODO: Stop hardcoding pictureIDs
     guard let pictureIDs = postIDDictionary["pictureID"] as? [String] else {
         print("cant get picture IDs")
-        completion(nil)
-        return
+        return nil
     }
     
-    getWorkout(workoutID: workoutID) { (workout) in
-        downloadImage(id: pictureIDs[0]) { (image) in
-            if let unwrappedWorkout = workout{
-                if let pictures = image {
-                    let feedPost = FeedPost(postID: postID,
-                                            workout: unwrappedWorkout,
-                                            userID: userID,
-                                            pictures: [pictures],
-                                            title: title,
-                                            description: description,
-                                            time: dateTime)
-                    completion(feedPost)
-                } else {
-                    completion(nil)
-                }
-            }
-        }
-    }
-    
+
+    return FeedPost(postID: postID,
+                            workout: workout,
+                            userID: userID,
+                            pictures: nil,
+                            pictureID: pictureIDs,
+                            title: title,
+                            description: description,
+                            time: dateTime)
 }
 
 

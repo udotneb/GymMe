@@ -60,18 +60,20 @@ class FinishedLoggingWorkoutController: UIViewController, ImagePickerDelegate {
         }
         
         guard let title = finishedLoggingView.titleInput.text else {
+            print("Need title!")
             return
         }
         
         let userID = workout.userID
         let workoutID = workout.workoutID
-        let description = "" // TODO: Add this later
+        let description = finishedLoggingView.descriptionInput.text ?? "" // TODO: Add this later
         let postID = UUID.init().uuidString
         let time = Date()
         let feedPost = FeedPost(postID: postID,
                                 workout: workout,
                                 userID: userID,
                                 pictures: [UIImage.init(named: "BenPic")!],
+                                pictureID: nil,
                                 title: title,
                                 description: description,
                                 time: time)

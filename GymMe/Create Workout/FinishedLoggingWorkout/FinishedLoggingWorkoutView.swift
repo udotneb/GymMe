@@ -8,6 +8,7 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import GrowingTextView
 
 class FinishedLoggingWorkoutView: UIView {
     // TODO: add description box
@@ -20,6 +21,25 @@ class FinishedLoggingWorkoutView: UIView {
         return textField
     }()
     
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Description:"
+        label.textColor = .blue
+        return label
+    }()
+    
+    let descriptionInput: UITextView = {
+        let textView = GrowingTextView()
+        textView.font = UIFont.boldSystemFont(ofSize: 14)
+        textView.minHeight = 28.0
+        textView.maxHeight = 70.0
+        textView.layer.cornerRadius = 4.0
+        textView.layer.cornerRadius = 5
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.black.cgColor
+        textView.addDoneButtonOnKeyboard()
+        return textView
+    }()
     
     private let numberImagesSelectedLabel: UILabel = {
         let label = UILabel()
@@ -61,12 +81,25 @@ class FinishedLoggingWorkoutView: UIView {
         titleInput.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
         titleInput.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15).isActive = true
         
+        self.addSubview(descriptionLabel)
+        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+        descriptionLabel.topAnchor.constraint(equalTo: titleInput.bottomAnchor, constant: 10).isActive = true
+        descriptionLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
+        descriptionLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
+        
+        self.addSubview(descriptionInput)
+        descriptionInput.translatesAutoresizingMaskIntoConstraints = false
+        descriptionInput.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 5).isActive = true
+        descriptionInput.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
+        descriptionInput.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
+
         self.addSubview(numberImagesSelectedLabel)
         numberImagesSelectedLabel.translatesAutoresizingMaskIntoConstraints = false
-        numberImagesSelectedLabel.topAnchor.constraint(equalTo: titleInput.bottomAnchor, constant: 10).isActive = true
+        numberImagesSelectedLabel.topAnchor.constraint(equalTo: descriptionInput.bottomAnchor, constant: 10).isActive = true
         numberImagesSelectedLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
         numberImagesSelectedLabel.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
         numberImagesSelectedLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.15).isActive = true
+        
         
         self.addSubview(imagePickButton)
         imagePickButton.translatesAutoresizingMaskIntoConstraints = false

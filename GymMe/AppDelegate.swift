@@ -53,6 +53,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.storageRef = storage.reference()
         print(self.storageRef)
         
+//        getAllPosts() { posts in
+//            if let postLst = posts {
+//                print(postLst)
+//                print(postLst.count)
+//            }
+//        }
+        
         return true
     }
 

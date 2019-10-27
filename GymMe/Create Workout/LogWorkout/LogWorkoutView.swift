@@ -23,7 +23,7 @@ class LogWorkoutView: UIView {
         button.addTarget(self, action: #selector(addExcerciseButtonPressed), for: .touchUpInside)
         button.backgroundColor = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
         button.setTitleColor(.black, for: .normal)
-        button.setTitle("+ Add Excercise", for: .normal)
+        button.setTitle("+ Add Exercise", for: .normal)
         button.layer.cornerRadius = 5
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.black.cgColor

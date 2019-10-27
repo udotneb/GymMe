@@ -1,15 +1,16 @@
 //
-//  UITextInput.swift
+//  UITextView.swift
 //  GymMe
 //
-//  Created by Benjamin Ulrich on 10/19/19.
+//  Created by Benjamin Ulrich on 10/26/19.
 //  Copyright © 2019 Benjamin Ulrich. All rights reserved.
 //
 
+import Foundation
 
 import UIKit
 
-extension UITextField{
+extension UITextView {
     
     @IBInspectable var doneAccessory: Bool{
         get{

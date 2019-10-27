@@ -9,6 +9,7 @@ target 'GymMe' do
   pod 'SkyFloatingLabelTextField', '~> 3.0'
   pod 'ImagePicker'
   pod 'McPicker', '~> 2.0.0'
+  pod 'GrowingTextView', '0.6.1'
   
   pod 'Firebase/Database'
   pod 'Firebase/Auth'

@@ -79,6 +79,7 @@ PODS:
   - "GoogleUtilities/NSData+zlib (6.3.1)"
   - GoogleUtilities/Reachability (6.3.1):
     - GoogleUtilities/Logger
+  - GrowingTextView (0.6.1)
   - "gRPC-C++ (0.0.9)":
     - "gRPC-C++/Implementation (= 0.0.9)"
     - "gRPC-C++/Interface (= 0.0.9)"
@@ -112,6 +113,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Firestore
   - Firebase/Storage
+  - GrowingTextView (= 0.6.1)
   - ImagePicker
   - McPicker (~> 2.0.0)
   - SkyFloatingLabelTextField (~> 3.0)
@@ -131,6 +133,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
+    - GrowingTextView
     - "gRPC-C++"
     - gRPC-Core
     - GTMSessionFetcher
@@ -155,6 +158,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 166f9b9f82cbf60a204e8fe2daa9db3e3ec1fb15
   GoogleDataTransportCCTSupport: f6ab1962e9dc05ab1fb938b795e5b310209edeec
   GoogleUtilities: f895fde57977df4e0233edda0dbeac490e3703b6
+  GrowingTextView: 335aefa45df7df06b01edede1363414d6ee5d6bc
   "gRPC-C++": 9dfe7b44821e7b3e44aacad2af29d2c21f7cde83
   gRPC-Core: c9aef9a261a1247e881b18059b84d597293c9947
   GTMSessionFetcher: 43b8b64263023d4f32caa0b40f4c8bfa3c5f36d8
@@ -165,6 +169,6 @@ SPEC CHECKSUMS:
   Protobuf: a4dc852ad69c027ca2166ed287b856697814375b
   SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
 
-PODFILE CHECKSUM: 956ee7aa56500d49daf681436211552431a1b8af
+PODFILE CHECKSUM: 485d379943b00c08651fc34f96878deb833b5d94
 
 COCOAPODS: 1.8.1

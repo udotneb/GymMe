@@ -9,14 +9,20 @@
 import UIKit
 
 class NewsFeedViewController: UIViewController {
-    let newsFeedView = NewsFeedView()
     private let refreshControl = UIRefreshControl()
-
+    private var postIDSet = Set<String>()
+    private var newsFeedView: NewsFeedView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.title = "News Feed"
+        
+        self.newsFeedView = NewsFeedView(parentViewController: self)
+        
+        guard let newsFeedView = self.newsFeedView else { // because self.newsFeedView is optional
+            return
+        }
         
         self.view.addSubview(newsFeedView)
         newsFeedView.translatesAutoresizingMaskIntoConstraints = false
@@ -31,17 +37,33 @@ class NewsFeedViewController: UIViewController {
     }
     
     @objc func refresh(sender: AnyObject) {
-        newsFeedView.addNewPost()
         print("refresh")
-        self.refreshControl.endRefreshing()
-        
-        getWorkout(workoutID: "CA31E62E-6A5F-4558-B243-3A2A2173586D") { (workout) in
-            print(workout)
-        }
-
-        getFeedPost(postID: "6C59B0B1-3927-490D-8E65-64DD4B764AA2") { (post) in
-            print(post)
+        getAllPosts() { posts in
+            if let postLst = posts {
+                let profileSample : Profile = getMockedProfile()
+                let sortedPosts = self.sortPostsByTime(postLst: postLst)
+                for post in sortedPosts {
+                    print(self.postIDSet.count)
+                    
+                    if !self.postIDSet.contains(post.postID) {
+                        self.newsFeedView?.addNewPost(feedPost: post, profile: profileSample)
+                    }
+                    
+                    self.postIDSet.insert(post.postID)
+                }
+            }
+            self.refreshControl.endRefreshing()
         }
     }
-
+    
+    private func sortPostsByTime(postLst: [FeedPost]) -> [FeedPost] {
+        return postLst.sorted(by: { $0.time > $1.time })
+    }
+    
+    func loadImageIntoView(pictureIDs: [String], imageView: UIImageView) {
+        let pictureID = pictureIDs[0]
+        downloadImage(pictureID: pictureID, imageView: imageView) { bool in
+            print(bool)
+        }
+    }
 }

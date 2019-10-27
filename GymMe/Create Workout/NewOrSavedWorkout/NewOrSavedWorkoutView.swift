@@ -36,9 +36,9 @@ class NewOrSavedWorkoutView: UIView {
         return view
     }()
     
-    private let savedWorkoutView: UIView = {
-          return SavedWorkoutView()
-    }()
+//    private let savedWorkoutView: UIView = {
+//          return SavedWorkoutView()
+//    }()
  
     
     override init(frame: CGRect) {
@@ -64,12 +64,12 @@ class NewOrSavedWorkoutView: UIView {
         horizontalBlackLine.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
         horizontalBlackLine.heightAnchor.constraint(equalToConstant: 1).isActive = true
         
-        self.addSubview(savedWorkoutView)
-        savedWorkoutView.translatesAutoresizingMaskIntoConstraints = false
-        savedWorkoutView.topAnchor.constraint(equalTo: horizontalBlackLine.bottomAnchor, constant: 10).isActive = true
-        savedWorkoutView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
-        savedWorkoutView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
-        savedWorkoutView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+//        self.addSubview(savedWorkoutView)
+//        savedWorkoutView.translatesAutoresizingMaskIntoConstraints = false
+//        savedWorkoutView.topAnchor.constraint(equalTo: horizontalBlackLine.bottomAnchor, constant: 10).isActive = true
+//        savedWorkoutView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 5).isActive = true
+//        savedWorkoutView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -5).isActive = true
+//        savedWorkoutView.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     
     }
     

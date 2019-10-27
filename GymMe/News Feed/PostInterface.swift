@@ -13,6 +13,7 @@ struct FeedPost {
     let workout: Workout
     let userID: String
     let pictures: [UIImage]?
+    let pictureID: [String]?
     let title: String
     let description: String
     let time: Date

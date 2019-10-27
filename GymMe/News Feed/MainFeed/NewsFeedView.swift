@@ -11,8 +11,10 @@ import UIKit
 class NewsFeedView: UIView {
     let scrollView = ControlContainableScrollView()
     private let stackView = UIStackView()
+    private var parentViewController: NewsFeedViewController?
     
-    init() {
+    init(parentViewController: NewsFeedViewController) {
+        self.parentViewController = parentViewController
         super.init(frame: UIScreen.main.bounds)
 
         self.addSubview(self.scrollView)
@@ -45,18 +47,14 @@ class NewsFeedView: UIView {
         stackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10).isActive = true
         stackView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
-        
-        addNewPost()
     }
     
-    func addNewPost() {
-        let feedPostSample:FeedPost = getMockedSampleFeedPost()
-        let workoutSample:Workout = getMockedSampleWorkout()
-        let profileSample:Profile = getMockedProfile()
-        stackView.insertArrangedSubview(FeedPostView(feedPost: feedPostSample, workout: workoutSample, profile: profileSample), at: 0)
+    func addNewPost(feedPost:FeedPost, profile: Profile) {
+        stackView.insertArrangedSubview(FeedPostView(feedPost: feedPost, workout: feedPost.workout, profile: profile,parentViewController: parentViewController!), at: 0)
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.parentViewController = nil
         fatalError("init(coder:) has not been implemented")
     }
 }

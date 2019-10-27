@@ -12,7 +12,7 @@ class TitleDescriptionView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = -1
-        label.font = UIFont.boldSystemFont(ofSize: 16.0)
+        label.font = UIFont.boldSystemFont(ofSize: 18.0)
         return label
     }()
     
@@ -22,8 +22,6 @@ class TitleDescriptionView: UIView {
         return label
     }()
 
-    
-    
     init(title: String, description: String?) {
         super.init(frame: UIScreen.main.bounds)
         
