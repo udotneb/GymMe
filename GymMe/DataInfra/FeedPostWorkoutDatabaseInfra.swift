@@ -103,6 +103,7 @@ func getFeedPost(postID: String, completion: @escaping (FeedPost?) -> () ) {
             completion(nil)
             return
         }
+<<<<<<< Updated upstream
         
         guard let title = value["title"] as? String else {
             print("cant get title")
@@ -153,13 +154,83 @@ func getFeedPost(postID: String, completion: @escaping (FeedPost?) -> () ) {
                         completion(feedPost)
                     } else {
                         completion(nil)
+=======
+
+        var returnedFeedPostList: [FeedPost]? = []
+        for v in value.keyEnumerator().reversed() {
+            let postID = v as! String
+            let postDict = value[v] as! NSDictionary
+            let dateTime = convertStringToDate(date: postDict["time"]! as! String)!
+            if dateTime > timeCutoff {
+                DispatchQueue.main.sync {
+                    dictionaryToFeedPost(postID: postID, postIDDictionary: postDict) { (post) in
+                        print("thread")
+                        print(Thread.current.threadName)
+                        if let p = post {
+                            print("appended")
+                            returnedFeedPostList?.append(p)
+                        } else {
+                            print("bad")
+                        }
+>>>>>>> Stashed changes
                     }
                 }
             }
         }
+<<<<<<< Updated upstream
             
     }) { (error) in
         print(error.localizedDescription)
+=======
+        print("completed")
+        completion(returnedFeedPostList)
+    })
+    
+    
+}
+
+
+private func dictionaryToFeedPost(postID: String, postIDDictionary: NSDictionary, completion: @escaping (FeedPost?) -> () ) {
+    
+    guard let description = postIDDictionary["description"] as? String else {
+        print("cant get description")
+        return
+    }
+    
+    guard let time = postIDDictionary["time"] as? String else {
+        print("cant get time")
+        completion(nil)
+        return
+    }
+    
+    guard let title = postIDDictionary["title"] as? String else {
+        print("cant get title")
+        completion(nil)
+        return
+    }
+    
+    guard let userID = postIDDictionary["userID"] as? String else {
+        print("cant get userID")
+        completion(nil)
+        return
+    }
+    
+    guard let workoutID = postIDDictionary["workoutID"] as? String else {
+        print("cant get workoutID")
+        completion(nil)
+        return
+    }
+    
+    guard let dateTime = convertStringToDate(date: time) else {
+        print("time can't be converted")
+        completion(nil)
+        return
+    }
+    
+    // TODO: Stop hardcoding pictureIDs
+    guard let pictureIDs = postIDDictionary["pictureID"] as? [String] else {
+        print("cant get picture IDs")
+>>>>>>> Stashed changes
         completion(nil)
     }
 
